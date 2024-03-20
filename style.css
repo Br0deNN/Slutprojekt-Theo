@@ -1,0 +1,56 @@
+
+#index {
+    background-color: #F5F5F4;
+    width: 100%;
+    height: 97vh;
+    margin: 0;
+}
+
+#index .wrapper {
+	width: 100%; /* Ställer in bredden på elementet till 100% */
+	height: 98vh; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
+	margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
+	display: grid; /* Använder CSS Grid för att skapa en rutnätslayout */
+	grid-template-rows: 80px 80px auto 70px; /* Ange rader för rutnätet med höjd för varje rad */
+	grid-template-areas: /* Ange områden för varje rad i rutnätet */
+		"header"
+		"nav"
+		"main"
+		"footer"
+	;
+}
+
+header nav {
+    background-color: #4cbb17;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    
+}
+
+header nav ul {
+    list-style-type: none;
+    display: grid;
+	grid-template-columns: 1.5fr repeat(5, 1fr);
+	grid-gap: 80px;
+	margin-top: 10px;
+	height: 70px;
+	text-align: center;
+    
+   
+}
+
+header nav ul li a {
+    text-decoration: none;
+    width: 100px;
+    font-size: 1.32em;
+    font-weight: bold;
+    display: block;
+    color: black;
+    
+}
+
+nav img {
+    width: 60px;
+}
