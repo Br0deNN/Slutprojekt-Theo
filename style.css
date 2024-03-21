@@ -6,7 +6,7 @@ body {
 }
 
 #index {
-    background-color: #F5F5F4;
+    background-color: #fffcf2;
 }
 
 #index .wrapper {
@@ -37,9 +37,9 @@ header nav ul {
     display: grid;
 	grid-template-columns: 1.5fr repeat(5, 1fr);
 	grid-gap: 10px;
-	margin-top: 10px;
 	text-align: center;
-    
+    align-items: center;
+    margin-right: 20px;
     
    
 }
@@ -50,7 +50,19 @@ header nav ul li a {
     font-weight: bold;
     display: block;
     color: black;
-    
+}
+
+header nav ul li:nth-child(2) {
+    border: 2px solid black;
+}
+header nav ul li:nth-child(3) {
+    border: 2px solid black;
+}
+header nav ul li:nth-child(4) {
+    border: 2px solid black;
+}
+header nav ul li:nth-child(5) {
+    border: 2px solid black;
 }
 
 
@@ -77,6 +89,7 @@ header nav ul li:nth-child(5):hover {
 
 header nav ul li:first-of-type {
     text-align: left;
+    
 }
 
 
@@ -85,18 +98,22 @@ header nav ul li:last-of-type{
     
 }
 
-header nav ul {
-    align-items: center;
+h1 {
+    font-size: 2em;
+    color: black;
+    padding-top: 200px;
 }
 
-nav img {
-    width: 60px;
+#index main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.bx bx-home {
-
+#index section {
+    height: 30ch;
+    background-color: yellow;
 }
 
-.bx bx-user-circle {
-    
+#index section:nth-child(2) {
+    background-color: blue;
 }
