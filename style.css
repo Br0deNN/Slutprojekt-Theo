@@ -9,8 +9,14 @@ body {
    
 }
 
+header {
+    grid-area: header;
+}
+
 header nav {
-    background-color: #0A5C36;
+    grid-area: nav;
+    
+    background-image: linear-gradient(#012310, #285828);
     height: 80px;
     width: 100%;
     position: fixed;
@@ -40,7 +46,9 @@ header nav ul li:first-of-type {
     text-align: left;
 }
 
-
+header nav ul li a{
+    transition: 0.5s ease;
+}
 
 header nav ul li:nth-child(2) a:hover{
     transform: scale(1.2);
@@ -87,6 +95,7 @@ header nav ul li a button {
     border-radius: 25px;
     color: white;
     font-weight: 600;
+    transition: 0.5s ease;
 }
 
 header nav ul li a button:hover {
@@ -100,6 +109,7 @@ header nav ul li a button:hover {
 
 header nav a img {
     width: 40px;
+    transition: 0.6s ease;
 }
 
 header nav a img:hover {
@@ -155,7 +165,7 @@ h1::after {
 
 
 #index main {
-    
+    grid-area: main;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -210,7 +220,12 @@ h1::after {
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
-    
+  transition: 0.5s ease;
+}
+
+#index section img:hover {
+    transform: scale(105%);
+    transition: 0.5s ease;
 }
 
 
@@ -233,11 +248,11 @@ footer p {
 
 #stjärnor .wrapper {
     width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: 98vh; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
-    margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
-    display: grid; /* Använder CSS Grid för att skapa en rutnätslayout */
-    grid-template-rows: 80px 80px auto 70px; /* Ange rader för rutnätet med höjd för varje rad */
-    grid-template-areas: /* Ange områden för varje rad i rutnätet */
+    height: 98vh; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px 80px auto auto; 
+    grid-template-areas: 
         "header"
         "nav"
         "main"
@@ -256,8 +271,11 @@ footer p {
     grid-gap: 5rem 8rem;
 }
 #stjärnor section:nth-child(1) {
-    background-color: #cbcdce;
+    background-image: linear-gradient(#989898, #a9a9a9, #A9A9A9);
     grid-area: topbar;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.12),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.09);
     
 }
 
@@ -265,6 +283,13 @@ footer p {
     background-color: yellow;
     grid-area: section1;
     
+    
+}
+
+#stjärnor section:nth-child(2) img {
+    width: 70%;
+    
+
 }
 
 #stjärnor section:nth-child(3) {
@@ -272,3 +297,31 @@ footer p {
     grid-area: section2;
 }
 
+#stjärnor main section ul {
+    list-style-type: none;
+    display: grid;
+	grid-template-columns: 1fr repeat(7, 1fr);
+	grid-gap: 10px;
+	text-align: center;
+    align-items: center;
+    grid-gap: 5ch;
+}
+
+#stjärnor main section ul li:first-of-type {
+    grid-column-start: 4;
+}
+
+#stjärnor main section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#stjärnor main section ul li {
+    border: 2px solid white;
+    border-radius: 25px;
+    background-image: linear-gradient(#5bb450, #72bf6a, #8bca84, #acd8a7 );
+    height: 110%;
+    
+}
