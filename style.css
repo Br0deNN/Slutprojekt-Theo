@@ -412,6 +412,35 @@ footer p {
     transition: 0.5s ease;
 }
 
+#global main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10em;;
+    
+}
+
+#global main section {
+    text-align: center;
+    height: 45em;
+    margin-top: 21px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    
+}
+
+#global main section:first-of-type {
+    background-image: linear-gradient(to right, #5b5859, #5f5c5d, #636061, #676465, #6b6869, #6f6c6d, #737071, #777475, #7c7879, #807c7d);
+}
+
+#global main section:nth-child(2) {
+    background-image: linear-gradient(to right, #848081, #888586, #8c898a, #908d8e, #949192, #989596, #9c999a, #a09d9e, #a4a1a2, #a9a6a7);
+}
+
+#global main section:last-of-type {
+    background-image: linear-gradient(to right, #adaaab, #b1aeaf, #b5b2b3, #b9b6b7, #bdbabb, #c1bebf, #c3c3c3, #c7c7c7, #cbcbcb, #cfcfcf);
+}
+
 /* Zlatan */
 
 #zlatan .wrapper {
