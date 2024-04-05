@@ -267,8 +267,8 @@ footer p {
     grid-template-areas: 
     "section1 section2"
     ;
-    grid-gap: 5rem;
-    margin-top: 5ch;
+    grid-gap: 10rem;
+    margin-top: 8ch;
     margin-left: 5ch;
 }
 #stjärnor nav:nth-child(2) {
@@ -280,20 +280,44 @@ footer p {
 }
 
 #stjärnor section:nth-child(1) {
-    background-color: gray;
     grid-area: section1;
-    width: 40em;
-    height: 30em;
-    justify-self: self-end;
+    height: 22em;
+    justify-self: center;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+}
+
+#sjtärnor section:nth-child(1) > video {
+    width: 100%;
+    
 }
 
 
 #stjärnor section:nth-child(2) {
-    background-color: gray;
     grid-area: section2;
-    width: 35em;
-    height: 25em;
-    justify-self: center;
+    width: 37em;
+    height: 27em;
+    justify-self: self-start;
+}
+
+#stjärnor section:nth-child(2) > img {
+    width: 110%;
+    border-radius: 20px;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+  transition: 0.5s ease;
 }
 
 #stjärnor nav:nth-child(2) ul {
@@ -326,6 +350,122 @@ footer p {
 }
 
 #stjärnor nav:nth-child(2) ul li:hover {
+    transform: scale(1.2);
+    transition: 0.5s ease;
+}
+
+/* Värdsstjärnor*/
+
+#global .wrapper {
+    width: 100%; /* Ställer in bredden på elementet till 100% */
+    height: 98vh; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px 60px auto auto; 
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer"
+    ;
+}
+
+#global nav:nth-child(2) {
+    background-image: linear-gradient(to top , #0d5054,#0c4a4d, #0b4346, #0a3c3f, #083538, #072f31);
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.12),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.09);
+    
+}
+
+#global nav:nth-child(2) ul {
+    list-style-type: none;
+    display: grid;
+	grid-template-columns: 1fr repeat(7, 1fr);
+	grid-gap: 10px;
+	text-align: center;
+    align-items: center;
+    grid-gap: 5ch;
+}
+
+#global nav:nth-child(2) ul li:first-of-type {
+    grid-column-start: 4;
+}
+
+#global nav:nth-child(2) ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#global nav:nth-child(2) ul li {
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+    background-image: linear-gradient(#36d6de, #2fd5dd, #28d3dc, #22d0da, #21cad3, #20c3cc, #1fbcc5, #1eb5be, #1dafb6, #1ca8af, #1aa1a8);
+    height: 110%;
+    transition: 0.5s ease;
+}
+
+#global nav:nth-child(2) ul li:hover {
+    transform: scale(1.2);
+    transition: 0.5s ease;
+}
+
+/* Zlatan */
+
+#zlatan .wrapper {
+    width: 100%; /* Ställer in bredden på elementet till 100% */
+    height: 98vh; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px 60px auto auto; 
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer"
+    ;
+}
+
+#zlatan nav:nth-child(2) {
+    background-image: linear-gradient(to top , #0d5054,#0c4a4d, #0b4346, #0a3c3f, #083538, #072f31);
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.12),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.09);
+    
+}
+
+#zlatan nav:nth-child(2) ul {
+    list-style-type: none;
+    display: grid;
+	grid-template-columns: 1fr repeat(7, 1fr);
+	grid-gap: 10px;
+	text-align: center;
+    align-items: center;
+    grid-gap: 5ch;
+}
+
+#zlatan nav:nth-child(2) ul li:first-of-type {
+    grid-column-start: 4;
+}
+
+#zlatan nav:nth-child(2) ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#zlatan nav:nth-child(2) ul li {
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+    background-image: linear-gradient(#36d6de, #2fd5dd, #28d3dc, #22d0da, #21cad3, #20c3cc, #1fbcc5, #1eb5be, #1dafb6, #1ca8af, #1aa1a8);
+    height: 110%;
+    transition: 0.5s ease;
+}
+
+#zlatan nav:nth-child(2) ul li:hover {
     transform: scale(1.2);
     transition: 0.5s ease;
 }
