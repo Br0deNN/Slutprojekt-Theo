@@ -142,10 +142,13 @@ h1::after {
     z-index: 1;
 }
 
+body {
+    background-color: #fffcf2;
+}
+
 /* Startsidan */
 
 #index {
-    background-color: #fffcf2;
     overflow-y: hidden;
 }
 
@@ -182,7 +185,7 @@ h1::after {
     text-align: center;
     width: 65%;
     margin: 35% auto;
-    border: 2px solid white;
+    border: 2px solid #fff;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -224,7 +227,7 @@ h1::after {
 }
 
 #index section img:hover {
-    transform: scale(105%);
+    transform: scale(1.05);
     transition: 0.5s ease;
 }
 
@@ -254,7 +257,7 @@ footer p {
     grid-template-rows: 80px 60px auto auto; 
     grid-template-areas: 
         "header"
-        "nav"
+        "nav2"
         "main"
         "footer"
     ;
@@ -320,6 +323,10 @@ footer p {
   transition: 0.5s ease;
 }
 
+#stjärnor nav:nth-child(2){
+    grid-area: nav2;
+}
+
 #stjärnor nav:nth-child(2) ul {
     list-style-type: none;
     display: grid;
@@ -364,10 +371,14 @@ footer p {
     grid-template-rows: 80px 60px auto auto; 
     grid-template-areas: 
         "header"
-        "nav"
+        "nav2"
         "main"
         "footer"
     ;
+}
+
+#global nav:nth-child(2) {
+    grid-area: nav2;
 }
 
 #global nav:nth-child(2) {
@@ -429,19 +440,58 @@ footer p {
     
 }
 
+#global main section img {
+    width: 45%;
+    border-radius: 10%;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+
+}
+
 #global main section:first-of-type {
     background-image: linear-gradient(to right, #5b5859, #5f5c5d, #636061, #676465, #6b6869, #6f6c6d, #737071, #777475, #7c7879, #807c7d);
+    display: grid;
+    place-items: center;
 }
 
 #global main section:nth-child(2) {
     background-image: linear-gradient(to right, #848081, #888586, #8c898a, #908d8e, #949192, #989596, #9c999a, #a09d9e, #a4a1a2, #a9a6a7);
+    display: grid;
+    place-items: center;
 }
 
 #global main section:last-of-type {
     background-image: linear-gradient(to right, #adaaab, #b1aeaf, #b5b2b3, #b9b6b7, #bdbabb, #c1bebf, #c3c3c3, #c7c7c7, #cbcbcb, #cfcfcf);
+    display: grid;
+    place-items: center;
+}
+
+#global main section:first-of-type article {
+    width: 60%;
+}
+
+#global main section:first-of-type article p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#global main section:nth-child(2) article {
+    width: 60%;
+}
+
+#global main section:nth-child(2) article p {
+    font-size: 1.2em;
+    text-align: center;
 }
 
 /* Zlatan */
+
 
 #zlatan .wrapper {
     width: 100%; /* Ställer in bredden på elementet till 100% */
@@ -451,10 +501,14 @@ footer p {
     grid-template-rows: 80px 60px auto auto; 
     grid-template-areas: 
         "header"
-        "nav"
+        "nav2"
         "main"
         "footer"
     ;
+}
+
+#zlatan nav:nth-child(2) {
+    grid-area: nav2;
 }
 
 #zlatan nav:nth-child(2) {
