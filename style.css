@@ -354,6 +354,7 @@ footer p {
     background-image: linear-gradient(#36d6de, #2fd5dd, #28d3dc, #22d0da, #21cad3, #20c3cc, #1fbcc5, #1eb5be, #1dafb6, #1ca8af, #1aa1a8);
     height: 110%;
     transition: 0.5s ease;
+    width: 10em;
 }
 
 #stjärnor nav:nth-child(2) ul li:hover {
@@ -416,6 +417,7 @@ footer p {
     background-image: linear-gradient(#36d6de, #2fd5dd, #28d3dc, #22d0da, #21cad3, #20c3cc, #1fbcc5, #1eb5be, #1dafb6, #1ca8af, #1aa1a8);
     height: 110%;
     transition: 0.5s ease;
+    width: 10em;
 }
 
 #global nav:nth-child(2) ul li:hover {
@@ -456,19 +458,18 @@ footer p {
 
 #global main section:first-of-type {
     background-image: linear-gradient(to right, #5b5859, #5f5c5d, #636061, #676465, #6b6869, #6f6c6d, #737071, #777475, #7c7879, #807c7d);
-    display: grid;
+    
     place-items: center;
 }
 
 #global main section:nth-child(2) {
     background-image: linear-gradient(to right, #848081, #888586, #8c898a, #908d8e, #949192, #989596, #9c999a, #a09d9e, #a4a1a2, #a9a6a7);
-    display: grid;
+    
     place-items: center;
 }
 
 #global main section:last-of-type {
     background-image: linear-gradient(to right, #adaaab, #b1aeaf, #b5b2b3, #b9b6b7, #bdbabb, #c1bebf, #c3c3c3, #c7c7c7, #cbcbcb, #cfcfcf);
-    display: grid;
     place-items: center;
 }
 
@@ -490,6 +491,12 @@ footer p {
     text-align: center;
 }
 
+#global main section video {
+    width: 420px;
+    height: 315px;
+    padding-top: 1em;
+}
+
 /* Zlatan */
 
 
@@ -505,6 +512,8 @@ footer p {
         "main"
         "footer"
     ;
+    background-image: url(img/63a395c0392670c13f1904f1302ae2b1.jpg);
+    background-size: cover;
 }
 
 #zlatan nav:nth-child(2) {
@@ -546,9 +555,38 @@ footer p {
     background-image: linear-gradient(#36d6de, #2fd5dd, #28d3dc, #22d0da, #21cad3, #20c3cc, #1fbcc5, #1eb5be, #1dafb6, #1ca8af, #1aa1a8);
     height: 110%;
     transition: 0.5s ease;
+    width: 10em;
 }
 
 #zlatan nav:nth-child(2) ul li:hover {
     transform: scale(1.2);
     transition: 0.5s ease;
+}
+
+#zlatan main {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr 2fr 0.5fr;
+}
+
+#zlatan main section:nth-child(1) {
+    grid-column-start: 2;
+    height: 70ex;
+    margin-top: 3em;
+    place-self: center;
+}
+
+#zlatan main section:nth-child(1) video {
+    height: 100%;
+}
+
+
+#zlatan main section:nth-child(2) {
+    grid-column-start: 4;
+    margin-top: 3em;
+}
+
+#zlatan main section:nth-child(2) img {
+    grid-column-start: 4;
+    margin-top: 3em;
+    width: 100%;
 }
