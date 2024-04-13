@@ -235,12 +235,14 @@ body {
 
 footer {
     grid-area: footer;
-    position: absolute;
+    position: fixed;
     background-color: black;
     width: 100%;
-    bottom: 0;
+    bottom: 0px;
     height: 50px;
     text-align: center;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 footer p {
@@ -265,14 +267,12 @@ footer p {
 
 #stjärnor main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100% 100%;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 100%;
     grid-template-areas: 
     "section1 section2"
     ;
-    grid-gap: 10rem;
-    margin-top: 8ch;
-    margin-left: 5ch;
+    margin-top: 2rem;
 }
 #stjärnor nav:nth-child(2) {
     background-image: linear-gradient(to top , #0d5054,#0c4a4d, #0b4346, #0a3c3f, #083538, #072f31);
@@ -306,11 +306,11 @@ footer p {
     grid-area: section2;
     width: 37em;
     height: 27em;
-    justify-self: self-start;
+    justify-self: center;
 }
 
 #stjärnor section:nth-child(2) > img {
-    width: 110%;
+    width: 100%;
     border-radius: 20px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -428,16 +428,17 @@ footer p {
 #global main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10em;;
+    
     
 }
 
 #global main section {
     text-align: center;
-    height: 45em;
+    height: 100%;
     margin-top: 21px;
     margin-left: 10px;
     margin-right: 10px;
+    
     
     
 }
@@ -570,9 +571,9 @@ footer p {
 
 #zlatan main section:nth-child(1) {
     grid-column-start: 2;
-    height: 70ex;
+    max-height: 20rem;
     margin-top: 3em;
-    place-self: center;
+    justify-self: center;
 }
 
 #zlatan main section:nth-child(1) video {
