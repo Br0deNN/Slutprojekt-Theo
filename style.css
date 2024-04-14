@@ -86,7 +86,7 @@ header nav ul li a {
 
 }
 
-header nav ul li a button {
+header > nav > ul > li:last-of-type {
     background-color: lawngreen;
     height: 3ch;
     width: 9ch;
@@ -98,7 +98,11 @@ header nav ul li a button {
     transition: 0.5s ease;
 }
 
-header nav ul li a button:hover {
+header nav ul li:last-of-type a{
+
+}
+
+header nav ul li:last-of-type:hover {
     transform: scale(1.2);
     transition: 0.5s ease;
 }
@@ -125,9 +129,6 @@ h1 {
     margin-top: 13%;
     margin-left: 15%;
     display: inline-block;
-    top: 50%;
-    left: 9.5%;
-    transform: translate(-50%, -50%);
 }
 
 h1::after {
@@ -157,15 +158,18 @@ body {
 	height: 98vh; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
 	margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
 	display: grid; /* Använder CSS Grid för att skapa en rutnätslayout */
-	grid-template-rows: 80px 80px auto 70px; /* Ange rader för rutnätet med höjd för varje rad */
+	grid-template-rows: 80px 10px auto 80px; /* Ange rader för rutnätet med höjd för varje rad */
 	grid-template-areas: /* Ange områden för varje rad i rutnätet */
 		"header"
-		"nav"
+        "h1" 
 		"main"
 		"footer"
 	;
 }
 
+#index h1{
+    grid-area: h1;
+}
 
 #index main {
     grid-area: main;
@@ -177,14 +181,15 @@ body {
 
 #index section:first-of-type {
     display: grid;
-
+    margin-top: auto;
 }
 
 
 #index section article {
     text-align: center;
     width: 65%;
-    margin: 35% auto;
+    justify-self: center;
+    align-self: center;
     border: 2px solid #fff;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -256,7 +261,7 @@ footer p {
     height: 98vh; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-rows: 80px 60px auto auto; 
+    grid-template-rows: 80px 60px auto 80px; 
     grid-template-areas: 
         "header"
         "nav2"
@@ -369,7 +374,7 @@ footer p {
     height: 98vh; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-rows: 80px 60px auto auto; 
+    grid-template-rows: 80px 60px auto 40px; 
     grid-template-areas: 
         "header"
         "nav2"
@@ -428,17 +433,16 @@ footer p {
 #global main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    
+    overflow-y: scroll;
     
 }
 
 #global main section {
     text-align: center;
-    height: 100%;
+    margin-bottom: 21px;
     margin-top: 21px;
     margin-left: 10px;
     margin-right: 10px;
-    
     
     
 }
@@ -494,7 +498,6 @@ footer p {
 
 #global main section video {
     width: 420px;
-    height: 315px;
     padding-top: 1em;
 }
 
@@ -513,9 +516,11 @@ footer p {
         "main"
         "footer"
     ;
-    background-image: url(img/63a395c0392670c13f1904f1302ae2b1.jpg);
-    background-size: cover;
+    background-image: linear-gradient(to right, blue, yellow);
 }
+
+
+
 
 #zlatan nav:nth-child(2) {
     grid-area: nav2;
