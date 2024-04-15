@@ -15,13 +15,11 @@ header {
 
 header nav {
     grid-area: nav;
-    
     background-image: linear-gradient(#012310, #285828);
     height: 80px;
     width: 100%;
     position: fixed;
     top: 0;
-
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.5),
     0 6.7px 5.3px rgba(0, 0, 0, 0.1);
@@ -124,73 +122,67 @@ header nav a img:hover {
     transition: 0.6s ease;
 }
 
-h1 {
-    font-size: 4em;
-    color: black;
-    position: relative;
-    z-index: 1;
-    margin-top: 13%;
-    margin-left: 15%;
-    display: inline-block;
-}
-
-h1::after {
-    content: " ";
-    background-color: #0A5C36;
-    height: 5px;
-    width: 100%;
-    display: block;
-    position: absolute;
-    margin: 0 auto;
-    border-radius: 5px;
-    z-index: 1;
-}
-
 body {
     background-color: #fffcf2;
 }
 
 /* Startsidan */
 
-#index {
-    overflow-y: hidden;
-}
 
 #index .wrapper {
 	width: 100%; /* Ställer in bredden på elementet till 100% */
 	height: 98vh; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
 	margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
 	display: grid; /* Använder CSS Grid för att skapa en rutnätslayout */
-	grid-template-rows: 80px 10px auto 80px; /* Ange rader för rutnätet med höjd för varje rad */
+	grid-template-rows: 80px auto 80px; /* Ange rader för rutnätet med höjd för varje rad */
 	grid-template-areas: /* Ange områden för varje rad i rutnätet */
 		"header"
-        "h1" 
 		"main"
 		"footer"
 	;
 }
 
-#index h1{
-    grid-area: h1;
-}
 
 #index main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(9, 0.5fr);
 
 }
-
 
 #index section:first-of-type {
-    display: grid;
-    margin-top: auto;
+    grid-row-start: 2;
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+
+#index section:first-of-type h2 {
+    font-size: 4em;
+    color: black;
+    text-align: center;
+}
+
+#index section:first-of-type h2::after {
+    content: " ";
+    background-color: #0A5C36;
+    height: 5px;
+    display: block;
+    border-radius: 5px;
 }
 
 
-#index section article {
+
+#index section:nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 8;
+    
+}
+
+#index section:nth-child(2) article {
     text-align: center;
-    width: 65%;
     justify-self: center;
     align-self: center;
     border: 2px solid #fff;
@@ -203,25 +195,25 @@ body {
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
 
-    min-height: 200px;
     background: white;
     border-radius: 5px;  
-}
-
-#index section article p {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    overflow-wrap: break-word;
     line-height: 1.5;
-    
+    max-height: 80vh;
+}
+
+#index section:nth-child(3) {
+    grid-column-start: 8;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 7;
+    align-content: center;
 }
 
 
-
-#index section:nth-child(2) {
-    margin-top: 70px;
-}
-
-#index section img {
-    width: 40vw;
+#index section:nth-child(3) img {
+    width: 100%;
     border-radius: 20px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -234,10 +226,51 @@ body {
   transition: 0.5s ease;
 }
 
-#index section img:hover {
+#index section:nth-child(3) img:hover {
     transform: scale(1.05);
     transition: 0.5s ease;
 }
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+    #index .wrapper {
+        height: auto; /* Set height to auto for smaller screens */
+        grid-template-rows: 60px auto 60px; /* Adjust grid row heights */
+    }
+
+    #index section:first-of-type {
+        grid-row-start: 1; /* Adjust grid row start */
+        grid-row-end: 2; /* Adjust grid row end */
+        grid-column-start: 1; /* Adjust grid column start */
+        grid-column-end: 5; /* Adjust grid column end */
+    }
+
+    #index section:nth-child(2) {
+        grid-column-start: 1; /* Adjust grid column start */
+        grid-column-end: 13; /* Adjust grid column end */
+        grid-row-start: 3; /* Adjust grid row start */
+        grid-row-end: 7; /* Adjust grid row end */
+    }
+
+    #index section:nth-child(3) {
+        grid-column-start: 1; /* Adjust grid column start */
+        grid-column-end: 13; /* Adjust grid column end */
+        grid-row-start: 8; /* Adjust grid row start */
+        grid-row-end: 11; /* Adjust grid row end */
+    }
+}
+
+/* For screens between 768px and 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Add specific styles for this range if needed */
+}
+
+/* For screens larger than 1023px */
+@media (min-width: 1024px) {
+    /* Add specific styles for this range if needed */
+}
+
+
 
 
 
@@ -275,9 +308,8 @@ footer p {
 
 #stjärnor main {
     display: grid;
-    grid-template-columns: 1fr 100% 1fr;
-    grid-template-rows: 100%;
-    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 0.5fr);
 }
 #stjärnor nav:nth-child(2) {
     background-image: linear-gradient(to top , #0d5054,#0c4a4d, #0b4346, #0a3c3f, #083538, #072f31);
@@ -288,8 +320,6 @@ footer p {
 }
 
 #stjärnor section {
-    height: 22em;
-    justify-self: center;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -298,17 +328,22 @@ footer p {
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
-
-  grid-column-start: 2;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio for a 16:9 video */
+    overflow: hidden;
 }
 
-#sjtärnor section > video {
+
+  
+#stjärnor section video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    
+    height: 100%;
 }
-
-
-
 
 #stjärnor nav:nth-child(2){
     grid-area: nav2;
@@ -414,74 +449,68 @@ footer p {
 
 #global main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    overflow-y: scroll;
-    
+    grid-template-columns: 1fr; /* Change to single column layout for smaller screens */
+    gap: 20px; /* Add gap between grid items */
+    padding: 20px; /* Add padding to main container */
 }
 
 #global main section {
     text-align: center;
     margin-bottom: 21px;
-    margin-top: 21px;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-    
 }
 
 #global main section img {
-    width: 45%;
-    border-radius: 10%;
+    width: 50%; /* Make images fill half the width of their container */
+    max-width: 100%; /* Ensure images don't exceed their container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
     0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
+    0 100px 80px rgba(0, 0, 0, 0.12);
+   
 
 }
 
-#global main section:first-of-type {
-    background-image: linear-gradient(to right, #5b5859, #5f5c5d, #636061, #676465, #6b6869, #6f6c6d, #737071, #777475, #7c7879, #807c7d);
-    
-    place-items: center;
-}
-
-#global main section:nth-child(2) {
-    background-image: linear-gradient(to right, #848081, #888586, #8c898a, #908d8e, #949192, #989596, #9c999a, #a09d9e, #a4a1a2, #a9a6a7);
-    
-    place-items: center;
-}
-
-#global main section:last-of-type {
-    background-image: linear-gradient(to right, #adaaab, #b1aeaf, #b5b2b3, #b9b6b7, #bdbabb, #c1bebf, #c3c3c3, #c7c7c7, #cbcbcb, #cfcfcf);
-    place-items: center;
-}
-
-#global main section:first-of-type article {
-    width: 60%;
-}
-
-#global main section:first-of-type article p {
-    font-size: 1.2em;
-    text-align: center;
-}
-
+#global main section:first-of-type article,
 #global main section:nth-child(2) article {
-    width: 60%;
+    width: 100%; /* Make article width 100% for smaller screens */
 }
 
+#global main section:first-of-type article p,
 #global main section:nth-child(2) article p {
     font-size: 1.2em;
     text-align: center;
 }
 
 #global main section video {
-    width: 420px;
+    width: 50%; /* Make images fill half the width of their container */
+    max-width: 100%; /* Ensure videos don't exceed their container width */
     padding-top: 1em;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
+
+#global main section:last-of-type video {
+    margin-bottom: 21px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 767px) {
+    #global main section {
+        margin-left: 0; /* Remove left margin for sections */
+        margin-right: 0; /* Remove right margin for sections */
+    }
+}
+
 
 /* Zlatan */
 
@@ -596,52 +625,95 @@ footer p {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr 0.5fr;
+    
 }
 
 #rekord main section {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #rekord main section:nth-child(1) {
-    background-color: blue;
     grid-column-start: 2;
     grid-row-start: 2;
 }
 
 #rekord main section > img {
     width: 100%;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
 }
 
 #rekord main section:nth-child(2) {
-    background-color: yellow;
     grid-column-start: 2;
     grid-row-start: 4;
 }
 
 #rekord main section:nth-child(3) {
-    background-color: red;
     grid-column-start: 2;
     grid-row-start: 6;
 }
 
 #rekord main section:nth-child(4) {
-    background-color: green;
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 2;
-    grid-column: span(4,5);
 }
 
 #rekord main section:nth-child(5) {
-    background-color: orange;
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 4;
 }
 
 #rekord main section:nth-child(6) {
-    background-color: purple;
     grid-column-start: 4;
     grid-column-end: 6;
     grid-row-start: 6;
+}
+
+/* Skugga bakom bild och text */
+
+#rekord main section:nth-child(7) {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    opacity: 0.5;
+}
+
+#rekord main section:nth-child(8) {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    z-index: -1;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    opacity: 0.5;
+}
+
+#rekord main section:nth-child(9) {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    opacity: 0.5;
+}
+
+#rekord main section article {
+    font-size: 1.8em;
+    overflow-wrap: break-word;
+}
+
+#rekord main section article p {
+
 }
