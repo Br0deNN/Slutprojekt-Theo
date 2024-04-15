@@ -99,7 +99,10 @@ header > nav > ul > li:last-of-type {
 }
 
 header nav ul li:last-of-type a{
-
+    font-size: 1.05em;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.3rem;
 }
 
 header nav ul li:last-of-type:hover {
@@ -272,11 +275,8 @@ footer p {
 
 #stjärnor main {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 100% 1fr;
     grid-template-rows: 100%;
-    grid-template-areas: 
-    "section1 section2"
-    ;
     margin-top: 2rem;
 }
 #stjärnor nav:nth-child(2) {
@@ -287,8 +287,7 @@ footer p {
     
 }
 
-#stjärnor section:nth-child(1) {
-    grid-area: section1;
+#stjärnor section {
     height: 22em;
     justify-self: center;
     box-shadow:
@@ -299,34 +298,17 @@ footer p {
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
+
+  grid-column-start: 2;
 }
 
-#sjtärnor section:nth-child(1) > video {
+#sjtärnor section > video {
     width: 100%;
     
 }
 
 
-#stjärnor section:nth-child(2) {
-    grid-area: section2;
-    width: 37em;
-    height: 27em;
-    justify-self: center;
-}
 
-#stjärnor section:nth-child(2) > img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
-  transition: 0.5s ease;
-}
 
 #stjärnor nav:nth-child(2){
     grid-area: nav2;
@@ -595,4 +577,71 @@ footer p {
     grid-column-start: 4;
     margin-top: 3em;
     width: 100%;
+}
+
+#rekord .wrapper {
+    width: 100%; /* Ställer in bredden på elementet till 100% */
+    height: 98vh; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px auto auto; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+
+#rekord main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr 0.5fr;
+}
+
+#rekord main section {
+
+}
+
+#rekord main section:nth-child(1) {
+    background-color: blue;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#rekord main section > img {
+    width: 100%;
+}
+
+#rekord main section:nth-child(2) {
+    background-color: yellow;
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+
+#rekord main section:nth-child(3) {
+    background-color: red;
+    grid-column-start: 2;
+    grid-row-start: 6;
+}
+
+#rekord main section:nth-child(4) {
+    background-color: green;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-column: span(4,5);
+}
+
+#rekord main section:nth-child(5) {
+    background-color: orange;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 4;
+}
+
+#rekord main section:nth-child(6) {
+    background-color: purple;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 6;
 }
