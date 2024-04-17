@@ -759,27 +759,66 @@ footer p {
     grid-template-columns: 1fr 1fr;
 }
 
+
+
 #fans main section:first-child {
     justify-self: center;
     align-self: center;
 }
 
+
 #fans main section:first-child table {
-    font-size: 1em;
     width: 100%;
 }
 
-#fans main section:first-child caption {
+#fans main section caption {
     font-size: 2em;
 } 
 
-#fans main section:first-child table, th, td  {
+#fans main section:first-child > table, th, td  {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 10px;
 }
 
+#fans main section:last-child > table {
+    height: -10%;
+}
+
+#fans main section:nth-child(2) tr td:nth-child(2) {
+    width: 200px;
+}
+
+#fans main section:nth-child(1) th {
+    background-color: #A0A0A0;
+}
+
 #fans main section:first-child tr:nth-child(odd){
-    background-color: lightgray;
+    background-color: #C0C0C0;
    
+}
+
+#fans main section:last-of-type {
+    justify-self: center;
+    align-self: center;
+}
+
+#fans main section:last-of-type table {
+    width: 100%;
+    
+}
+
+#fans main section:nth-child(2) th {
+    background-color: #606060;
+}
+
+#fans main section:last-of-type tr:nth-child(odd){
+    background-color: #808080;
+   
+}
+
+#fans main section:last-child > table, th, td  {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
 }
