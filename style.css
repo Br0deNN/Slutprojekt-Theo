@@ -178,6 +178,7 @@ body {
     grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 3;
+    margin-top: auto;
 }
 
 #index section:nth-child(2) article {
@@ -196,10 +197,10 @@ body {
 
     background: white;
     border-radius: 5px;  
-    font-size: 2rem;
+    font-size: 2em;
     overflow-wrap: break-word;
     line-height: 1.5;
-    max-height: 80vh;
+    
 }
 
 #index section:nth-child(3) {
@@ -213,7 +214,7 @@ body {
 
 
 #index section:nth-child(3) img {
-    width: 100%;
+    width: 90%;
     border-radius: 20px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -512,16 +513,23 @@ footer p {
 
 /* Zlatan */
 
+h1 {
+    grid-area: h1;
+    color: White;
+    margin-top: 170px;
+    text-align: center;
+}
 
 #zlatan .wrapper {
     width: 100%; /* Ställer in bredden på elementet till 100% */
     height: 100%; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-rows: 80px 60px auto 50px; 
+    grid-template-rows: 80px 60px auto auto 50px; 
     grid-template-areas: 
         "header"
         "nav2"
+        "h1"
         "main"
         "footer"
     ;
@@ -756,7 +764,7 @@ footer p {
 
 #fans main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 
@@ -781,9 +789,7 @@ footer p {
     padding: 10px;
 }
 
-#fans main section:last-child > table {
-    height: -10%;
-}
+
 
 #fans main section:nth-child(2) tr td:nth-child(2) {
     width: 200px;
@@ -798,6 +804,42 @@ footer p {
    
 }
 
+#fans main section:nth-child(2) {
+    justify-self: end;
+    align-self: center;
+}
+
+#fans main section:nth-child(2) table {
+    width: 100%;
+    
+}
+
+#fans main section:nth-child(2) th {
+    background-color: #606060;
+}
+
+#fans main section:nth-child(2) tr:nth-child(odd){
+    background-color: #808080;
+   
+}
+
+#fans main section:nth-child(2) > table, th, td  {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+
+#fans main section:last-of-type tr td:nth-child(2) {
+    width: 200px;
+}
+
+
+#fans main section:last-of-type table {
+    width: 100%;
+    
+}
+
 #fans main section:last-of-type {
     justify-self: center;
     align-self: center;
@@ -808,7 +850,7 @@ footer p {
     
 }
 
-#fans main section:nth-child(2) th {
+#fans main section:last-of-type th {
     background-color: #606060;
 }
 
@@ -817,8 +859,80 @@ footer p {
    
 }
 
-#fans main section:last-child > table, th, td  {
+#fans main section:last-of-type > table, th, td  {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 10px;
+}
+
+#login .wrapper {
+    width: 100%; /* Ställer in bredden på elementet till 100% */
+    height: 100%; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px auto 50px; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+
+#login main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#login main form {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    align-self: center;
+}
+
+#login main form input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    
+}
+
+#login main form button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#login main form button:hover {
+    opacity: 0.8;
+}
+
+#login main form .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+#login main form .cancelbtn a{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelbtn {
+      width: 100%;
+    }
+}
+
+#login main img {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: auto;
+    grid-column-start: 2;
 }
