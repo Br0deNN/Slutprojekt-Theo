@@ -16,7 +16,6 @@ header {
 header nav {
     grid-area: nav;
     background-image: linear-gradient(#012310, #285828);
-    height: 80px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -134,9 +133,10 @@ body {
 	height: 100%; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
 	margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
 	display: grid; /* Använder CSS Grid för att skapa en rutnätslayout */
-	grid-template-rows: 80px auto 50px; /* Ange rader för rutnätet med höjd för varje rad */
+	grid-template-rows: 80px 4em auto 50px; /* Ange rader för rutnätet med höjd för varje rad */
 	grid-template-areas: /* Ange områden för varje rad i rutnätet */
 		"header"
+        "h2"
 		"main"
 		"footer"
 	;
@@ -158,6 +158,7 @@ body {
 }
 
 #index section:first-of-type h2 {
+    grid-area: h2;
     font-size: 4em;
     color: black;
     text-align: center;
@@ -165,6 +166,7 @@ body {
 
 #index section:first-of-type h2::after {
     content: " ";
+    width: 5px;
     background-color: #0A5C36;
     height: 5px;
     display: block;
@@ -173,7 +175,7 @@ body {
 
 
 
-#index section:nth-child(2) {
+#index section:nth-child(1) {
     grid-column-start: 2;
     grid-column-end: 7;
     grid-row-start: 2;
@@ -181,7 +183,7 @@ body {
     margin-top: auto;
 }
 
-#index section:nth-child(2) article {
+#index section:nth-child(1) article {
     text-align: center;
     justify-self: center;
     align-self: center;
@@ -203,7 +205,7 @@ body {
     
 }
 
-#index section:nth-child(3) {
+#index section:nth-child(2) {
     grid-column-start: 8;
     grid-column-end: 14;
     grid-row-start: 1;
@@ -213,7 +215,7 @@ body {
 }
 
 
-#index section:nth-child(3) img {
+#index section:nth-child(2) img {
     width: 90%;
     border-radius: 20px;
     box-shadow:
@@ -224,52 +226,13 @@ body {
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
-  transition: 0.5s ease;
 }
 
-#index section:nth-child(3) img:hover {
+#index section:nth-child(2) img:hover {
     transform: scale(1.05);
-    transition: 0.5s ease;
+    transition: 0.5s ease-in-out;
 }
 
-/* For screens smaller than 768px */
-@media (max-width: 767px) {
-    #index .wrapper {
-        height: auto; /* Set height to auto for smaller screens */
-        grid-template-rows: 60px auto 60px; /* Adjust grid row heights */
-    }
-
-    #index section:first-of-type {
-        grid-row-start: 1; /* Adjust grid row start */
-        grid-row-end: 2; /* Adjust grid row end */
-        grid-column-start: 1; /* Adjust grid column start */
-        grid-column-end: 5; /* Adjust grid column end */
-    }
-
-    #index section:nth-child(2) {
-        grid-column-start: 1; /* Adjust grid column start */
-        grid-column-end: 13; /* Adjust grid column end */
-        grid-row-start: 3; /* Adjust grid row start */
-        grid-row-end: 7; /* Adjust grid row end */
-    }
-
-    #index section:nth-child(3) {
-        grid-column-start: 1; /* Adjust grid column start */
-        grid-column-end: 13; /* Adjust grid column end */
-        grid-row-start: 8; /* Adjust grid row start */
-        grid-row-end: 11; /* Adjust grid row end */
-    }
-}
-
-/* For screens between 768px and 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-    /* Add specific styles for this range if needed */
-}
-
-/* For screens larger than 1023px */
-@media (min-width: 1024px) {
-    /* Add specific styles for this range if needed */
-}
 
 
 
@@ -448,9 +411,9 @@ footer p {
 
 #global main {
     display: grid;
-    grid-template-columns: 1fr; /* Change to single column layout for smaller screens */
-    gap: 20px; /* Add gap between grid items */
-    padding: 20px; /* Add padding to main container */
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    padding: 20px; 
 }
 
 #global main section {
@@ -459,9 +422,9 @@ footer p {
 }
 
 #global main section img {
-    width: 50%; /* Make images fill half the width of their container */
-    max-width: 100%; /* Ensure images don't exceed their container width */
-    height: auto; /* Maintain aspect ratio */
+    width: 50%; 
+    max-width: 100%; 
+    height: auto; 
     border-radius: 10px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -476,7 +439,7 @@ footer p {
 
 #global main section:first-of-type article,
 #global main section:nth-child(2) article {
-    width: 100%; /* Make article width 100% for smaller screens */
+    width: 100%; 
 }
 
 #global main section:first-of-type article p,
@@ -486,8 +449,8 @@ footer p {
 }
 
 #global main section video {
-    width: 50%; /* Make images fill half the width of their container */
-    max-width: 100%; /* Ensure videos don't exceed their container width */
+    width: 50%; 
+    max-width: 100%; 
     padding-top: 1em;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -501,15 +464,6 @@ footer p {
 #global main section:last-of-type video {
     margin-bottom: 21px;
 }
-
-/* Media query for screens smaller than 768px */
-@media (max-width: 767px) {
-    #global main section {
-        margin-left: 0; /* Remove left margin for sections */
-        margin-right: 0; /* Remove right margin for sections */
-    }
-}
-
 
 /* Zlatan */
 
@@ -900,7 +854,7 @@ h1 {
 }
 
 #login main form button {
-    background-color: #04AA6D;
+    background-color: #012310;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -916,7 +870,7 @@ h1 {
 #login main form .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background-color: red;
 }
 
 #login main form .cancelbtn a{
@@ -924,15 +878,172 @@ h1 {
     color: #fff;
 }
 
-@media screen and (max-width: 300px) {
-    .cancelbtn {
-      width: 100%;
-    }
-}
 
 #login main img {
     width: 50%;
     margin: 0 auto;
     margin-top: auto;
     grid-column-start: 2;
+}
+
+#svar .wrapper {
+    width: 100%; /* Ställer in bredden på elementet till 100% */
+    height: 100%; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px auto 50px; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+
+#svar main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#svar main section:first-child {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    border: 1px solid black;
+}
+
+#svar main section:nth-child(2) {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    text-align-last: center;
+}
+
+#svar main section:nth-child(3) {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    text-align-last: center;
+}
+
+#svar dl {
+    text-align: center;
+    line-height: 3;
+}
+
+#svar dt {
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+#svar dd {
+    font-size: larger;
+    font-weight: 600;
+    padding-right: 30px;
+}
+
+#svar dd:last-of-type {
+    color: hsl(145, 100%, 15%);
+    font-weight: 800;
+   
+}
+
+/* Quiz */
+
+#quiz .wrapper {
+    width: 100%; /* Ställer in bredden på elementet till 100% */
+    height: 100%; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-rows: 80px auto 50px; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+
+/* Media queris */
+
+@media screen and (max-width: 300px) {
+    .cancelbtn {
+      width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    nav:first-of-type > ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 0;
+        line-height: 2;
+        margin: 0;
+    }
+
+    #index main {
+        display: flex;
+        overflow-y: scroll;
+    }
+
+    #index section:first-of-type {
+        grid-row-start: 1;
+        grid-column-start: 1;
+    }
+    
+    
+    
+    
+    #index section:nth-child(1) {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        margin-top: auto;
+    }
+    
+    #index section:nth-child(1) article {
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+        border: 2px solid #fff;
+        box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)
+      ;
+    
+        background: white;
+        border-radius: 3px;  
+        font-size: 1em;
+        overflow-wrap: break-word;
+        
+    }
+    
+    #index section:nth-child(2) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        align-content: center;
+        padding-right: 20px;
+    }
+    
+    
+    #index section:nth-child(2) img {
+        width: 90%;
+        border-radius: 20px;
+        box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)
+      ;
+    }
+
+}
+
+@media (max-width: 767px) {
+    #global main section {
+        margin-left: 0; 
+        margin-right: 0; 
+    }
 }
