@@ -41,6 +41,7 @@ header nav ul li:nth-child(2) {
 
 header nav ul li:first-of-type {
     text-align: left;
+    filter: invert(100%);
 }
 
 header nav ul li a{
@@ -145,47 +146,19 @@ body {
 
 #index main {
     grid-area: main;
-    display: grid;
-    grid-template-columns: repeat(13, 1fr);
-    grid-template-rows: repeat(3, auto);
-
+    display: flex;
+    flex-direction: row;
 }
 
-#index section:first-of-type {
-    grid-row-start: 1;
-    grid-column-start: 4;
-    grid-column-end: 4;
-}
-
-#index section:first-of-type h2 {
-    grid-area: h2;
+#index main h2 {
     font-size: 4em;
     color: black;
     text-align: center;
 }
 
-#index section:first-of-type h2::after {
-    content: " ";
-    width: 5px;
-    background-color: #0A5C36;
-    height: 5px;
-    display: block;
-    border-radius: 5px;
-}
 
-
-
-#index section:nth-child(1) {
-    grid-column-start: 2;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    margin-top: auto;
-}
-
-#index section:nth-child(1) article {
+#index main article {
     text-align: center;
-    justify-self: center;
     align-self: center;
     border: 2px solid #fff;
     box-shadow:
@@ -196,8 +169,6 @@ body {
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
-
-    background: white;
     border-radius: 5px;  
     font-size: 2em;
     overflow-wrap: break-word;
@@ -205,18 +176,9 @@ body {
     
 }
 
-#index section:nth-child(2) {
-    grid-column-start: 8;
-    grid-column-end: 14;
-    grid-row-start: 1;
-    grid-row-end: 6;
-    align-content: center;
-    padding-right: 20px;
-}
 
-
-#index section:nth-child(2) img {
-    width: 90%;
+#index main img {
+    width: 50%;
     border-radius: 20px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -228,7 +190,7 @@ body {
   ;
 }
 
-#index section:nth-child(2) img:hover {
+#index main img:hover {
     transform: scale(1.05);
     transition: 0.5s ease-in-out;
 }
@@ -978,9 +940,25 @@ h1 {
         margin: 0;
     }
 
+    #index .wrapper {
+        width: 100%; /* Ställer in bredden på elementet till 100% */
+        height: 100%; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
+        margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
+        display: grid; /* Använder CSS Grid för att skapa en rutnätslayout */
+        grid-template-rows: auto 1em auto 50px; /* Ange rader för rutnätet med höjd för varje rad */
+        grid-template-areas: /* Ange områden för varje rad i rutnätet */
+            "header"
+            "h2"
+            "main"
+            "footer"
+        ;
+    }
+
+
     #index main {
         display: flex;
         overflow-y: scroll;
+        flex-direction: column;
     }
 
     #index section:first-of-type {
@@ -988,16 +966,7 @@ h1 {
         grid-column-start: 1;
     }
     
-    
-    
-    
-    #index section:nth-child(1) {
-        grid-column-start: 1;
-        grid-row-start: 1;
-        margin-top: auto;
-    }
-    
-    #index section:nth-child(1) article {
+    #index article {
         text-align: center;
         justify-self: center;
         align-self: center;
@@ -1018,15 +987,8 @@ h1 {
         
     }
     
-    #index section:nth-child(2) {
-        grid-column-start: 1;
-        grid-row-start: 2;
-        align-content: center;
-        padding-right: 20px;
-    }
     
-    
-    #index section:nth-child(2) img {
+    #index img:nth-child(2) {
         width: 90%;
         border-radius: 20px;
         box-shadow:
