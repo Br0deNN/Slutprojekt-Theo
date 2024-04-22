@@ -353,6 +353,7 @@ h1 {
 
 #rekord main section {
     text-align: center;
+    border-radius: 50px;
     
 }
 
@@ -369,6 +370,7 @@ h1 {
 }
 
 #rekord img {
+    border-radius: 50px;
     width: 80px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -510,7 +512,7 @@ h1 {
     background-color: red;
 }
 
-#login main form .cancelbtn a{
+#login main form a{
     text-decoration: none;
     color: #fff;
 }
