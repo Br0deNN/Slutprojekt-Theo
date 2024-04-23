@@ -67,7 +67,7 @@ nav a img {
 		"main"
 		"footer"
 	;
-    overflow-y: hidden;
+    overflow-y: hidden; /* Döljer överflödet på y axel, alltså att den tar bort scrollbaren*/
 }
 
 
@@ -93,21 +93,13 @@ nav a img {
     text-align: center;
 }
 
-
-#index main img {
-    border-radius: 20px;
-    width: 50%;
-    box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
+img {
+    border-radius: 30px;
 }
 
-
+video {
+    border-radius: 30px;
+}
 
 footer {
     grid-area: footer;
@@ -121,6 +113,22 @@ footer p {
     color: white;
     font-size: 1em;
 }
+
+#index main img {
+    width: 50%;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+}
+
+
+
+
 
 /* Stjärnor */
 
@@ -228,7 +236,6 @@ nav:nth-child(2) ul li:hover {
     width: 50%; 
     max-width: 100%; 
     height: auto; 
-    border-radius: 10px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -361,7 +368,6 @@ h1 {
 }
 
 #rekord img {
-    border-radius: 50px;
     width: 80px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -493,7 +499,7 @@ h1 {
 
 
 #login main form button {
-    background-color: #04AA6D;
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -564,12 +570,10 @@ h1 {
 }
 
 #svar dt {
-    font-size: 2em;
     font-weight: 1000;
 }
 
 #svar dd {
-    font-size: larger;
     font-weight: 600;
     padding-right: 30px;
 }
@@ -587,12 +591,56 @@ h1 {
     height: 100%; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-rows: 80px auto 50px; 
+    grid-template-rows: auto auto 50px; 
     grid-template-areas: 
         "header"
         "main"
         "footer"
     ;
+}
+
+#quiz main{
+    display: flex;
+    flex-direction: column;
+}
+
+#quiz h2 {
+    text-align: center;
+}
+
+#quiz form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    align-self: center;
+    padding: 20px;
+}
+
+#quiz legend {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#quiz input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#quiz button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#quiz button[type="submit"]:hover {
+    background-color: #45a049;
 }
 
 /*Love Focus HaTe*/
@@ -931,6 +979,18 @@ a:active{
         align-self: center;
         grid-column-start: 2;
         grid-row-start: 2;
+    }
+
+    #svar dl {
+        line-height: 3;
+    }
+    
+    #svar dt {
+        font-size: 2em;
+    }
+    
+    #svar dd {
+        font-size: larger;
     }
 
 }
