@@ -856,9 +856,8 @@ h1 {
     }
 
     #fans main {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        overflow-y: hidden;
+        display: flex;
+        flex-direction: row;
         align-content: center;
         grid-gap: 5ch;
         padding: 5ch;
