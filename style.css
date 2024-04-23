@@ -474,17 +474,26 @@ h1 {
     align-self: center;
 }
 
-#login main form input[type=text], input[type=password] {
+#login main form input[type=text],
+#login main form input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    border: 1px solid #ccc;
     box-sizing: border-box;
-    
 }
 
+.password-input.valid-password {
+    border: 2px solid rgb(10, 236, 10); /* Grön färg för giltigt lösenord */
+}
+
+.password-input.invalid-password {
+    border: 2px solid red; /* Röd färg för ogiltigt lösenord */
+}
+
+
+
 #login main form button {
-    background-color: #012310;
+    background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -502,6 +511,10 @@ h1 {
     padding: 9px 18px;
     background-color: red;
     font-size: 0.8em;
+}
+
+#login label:last-child {
+    float: right;
 }
 
 #login main form a{
@@ -645,6 +658,10 @@ a:active{
         color: white;
         font-weight: 600;
         
+    }
+
+    nav:first-of-type ul li:last-of-type > a:hover {
+        color: white;
     }
 
     nav:nth-child(2) {
