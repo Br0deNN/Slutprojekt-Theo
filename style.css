@@ -1,11 +1,15 @@
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat-Medium.ttf);
+}
+
 
 body {
     margin: 0;
     width: 100%;
     height: 100vh;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif, 'Times New Roman', Times, serif;
     background-color: #fffcf2;
 }
 
@@ -46,12 +50,6 @@ nav li a {
 .active {
     color: lawngreen;
 }
-
-nav a img {
-    width: 40px;
-    filter: invert(100%);
-}
-
 
 /* Startsidan */
 
@@ -147,23 +145,28 @@ footer p {
 }
 
 #stjärnor main {
-    display: grid; 
-    grid-template-rows: 1fr 1fr;
+    display: flex; 
+    flex-direction: column;
     overflow-y: scroll;
 }
 
-#stjärnor section {
-    align-content: center;
+#stjärnor section:first-child {
     text-align-last: center;
-} 
+}
+
+#stjärnor h2 {
+    font-size: large;
+    text-align: left;
+}
+
+#stjärnor ol {
+    font-size: 0.9em;
+}
 
 #stjärnor video {
     width: 90%;
 }
 
-#stjärnor img {
-    width: 90%;
-}
 
 nav:nth-child(2) {
     background-image: linear-gradient(to top , #0d5054,#0c4a4d, #0b4346, #0a3c3f, #083538, #072f31);
@@ -223,8 +226,6 @@ nav:nth-child(2) ul li:hover {
 #global main {
     display: grid;
     grid-template-columns: 1fr; 
-    gap: 20px; 
-    padding: 20px; 
 }
 
 #global main section {
@@ -247,16 +248,6 @@ nav:nth-child(2) ul li:hover {
 
 }
 
-#global main section:first-of-type article,
-#global main section:nth-child(2) article {
-    width: 100%; 
-}
-
-#global main section:first-of-type article p,
-#global main section:nth-child(2) article p {
-    font-size: 1.2em;
-    text-align: center;
-}
 
 #global main section video {
     width: 50%; 
@@ -300,29 +291,23 @@ h1 {
 
 
 #zlatan main {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     overflow-y: scroll;
 }
 
 #zlatan main section:nth-child(1) {
-    justify-self: center;
-    grid-row-start: 1;
     text-align-last: center;
-    align-content: center;
+    margin-top: 1em;
 }
 
 #zlatan main section:nth-child(1) video {
     width: 90%;
-    max-height: 20rem;
-    justify-self: center;
-    
 }
 
 
 #zlatan main section:nth-child(2) {
-    margin-top: 3em;
-    grid-row-start: 2;
+    margin-top: 1em;
 }
 
 #zlatan main section:nth-child(2) img {
@@ -434,7 +419,7 @@ h1 {
     background-color: #A0A0A0;
 }
 
-#fans main section:first-child tr:nth-child(odd){
+#fans main section:first-child tr:nth-child(even){
     background-color: #C0C0C0;
    
 }
@@ -480,19 +465,30 @@ h1 {
     align-self: center;
 }
 
-#login main form input[type=text],
-#login main form input[type=password] {
+#login main form input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
-.password-input.valid-password {
+#passwordError, #emailError {
+    color: red;
+}
+
+.required.valid-password {
     border: 2px solid rgb(10, 236, 10); /* Grön färg för giltigt lösenord */
 }
 
-.password-input.invalid-password {
+.required.invalid-password {
+    border: 2px solid red; /* Röd färg för ogiltigt lösenord */
+}
+
+.required.valid-email {
+    border: 2px solid rgb(10, 236, 10); /* Grön färg för giltigt lösenord */
+}
+
+.required.invalid-email{
     border: 2px solid red; /* Röd färg för ogiltigt lösenord */
 }
 
@@ -828,15 +824,22 @@ a:active{
     #stjärnor main {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
         overflow-y: hidden;
     }
 
-    #stjärnor video {
-        width: 90%;
+    #stjärnor section {
+        align-self: center;
     }
 
-    #stjärnor img {
+    #stjärnor h2 {
+        font-size: 2em;
+    }
+    
+    #stjärnor ol {
+        font-size: 1.5em;
+    }
+
+    #stjärnor video {
         width: 90%;
     }
 
@@ -858,6 +861,8 @@ a:active{
     
     #zlatan main {
         display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     #rekord .wrapper {

@@ -12,8 +12,8 @@
     </head>
     <body id="login">
         <div class="wrapper">
-            <header>
-                <nav>
+            <header role="banner">
+                <nav role="navigation">
                     
                     <ul>
                         <li>
@@ -38,16 +38,22 @@
                     
                 </nav>
             </header>
-           <main>
+           <main role="main">
                 <img src="img/epic_soccer_player_version_1_by_pm_artistic_dfst9ia-fullview.jpg" alt="">
-                <form action="svar.html" method="post">
+                <form role="form" action="svar.html" method="post">
                     <label for="uname"><b>Användarnamn</b></label>
                     <input type="text" placeholder="Ange Användarnamn" name="uname" id="uname" required>
+
+                    <label for="email"><b>E-post</b></label>
+                    <input type="email" placeholder="test.test@tesing.ta" name="email" id="email" required class="required">
+
+                    <div id="emailError"></div>
+                   
                     
                     <label for="psw"><b>Lösenord</b></label>
-                    <input type="password" placeholder="Ange Lösenord" name="psw" id="psw" required class="password-input">
+                    <input type="password" placeholder="Ange Lösenord" name="psw" id="psw" required class="required">
 
-                    <div id="passwordError" style="color: red;"></div>
+                    <div id="passwordError"></div>
             
                     <button type="submit" id="loginButton">Logga in</button>
             
@@ -57,7 +63,7 @@
                       </label>
                 </form>
             </main>
-            <footer>
+            <footer role="contentinfo">
                 <p>Theo Brodén TE22A</p>
             </footer>
             

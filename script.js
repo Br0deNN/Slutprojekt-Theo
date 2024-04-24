@@ -18,18 +18,23 @@ document.getElementById("loginButton").addEventListener("click", function(event)
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    var radioButtons = document.querySelectorAll('input[type="radio"]');
-    
-    radioButtons.forEach(function(radioButton) {
-        radioButton.addEventListener("click", function() {
-            if (this.checked) {
-                radioButtons.forEach(function(rb) {
-                    if (rb !== radioButton) {
-                        rb.checked = false;
-                    }
-                });
-            }
-        });
-    });
+
+
+document.getElementById("loginButton").addEventListener("click", function(event) {
+    var password = document.getElementById("email").value;
+    var minLength = 8; // Minsta antal tecken för lösenordet
+
+    if (password.length < minLength) {
+        // Om lösenordet är för kort, förhindra formuläret från att skickas och visa felmeddelande
+        event.preventDefault();
+        document.getElementById("emailError").textContent = "Du måste skriva det i rätt format.";
+        document.getElementById("email").classList.remove("valid-password");
+        document.getElementById("email").classList.add("invalid-password");
+    } else {
+        // Om lösenordet är tillräckligt långt, ta bort eventuella tidigare felmeddelanden och ändra border-färgen
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("email").classList.remove("invalid-email");
+        document.getElementById("email").classList.add("valid-email");
+    }
 });
+

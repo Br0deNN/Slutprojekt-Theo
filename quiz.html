@@ -12,8 +12,8 @@
     </head>
     <body id="quiz">
         <div class="wrapper">
-            <header>
-                <nav>
+            <header role="banner">
+                <nav role="navigation">
                     
                     <ul>
                         <li>
@@ -40,30 +40,30 @@
 
                 
             </header>
-            <main>
+            <main role="main">
                 <h2>Quiz om fotboll</h2>
-                <form action="svar.html" method="post">
+                <form role="form" action="svar.html" method="post">
                     <fieldset>
                         <legend>Vem är världens bästa fotbollsspelare?</legend>
-                        <input type="radio" value="Messi" name="fråga1" id="p1">
+                        <input type="radio" value="Messi" name="fråga" id="p1">
                         <label for="p1">Messi</label>
                         <br>
-                        <input type="radio" value="Messi" name="fråga2" id="p2">
+                        <input type="radio" value="Messi" name="fråga" id="p2">
                         <label for="p2">Messi</label>
                         <br>
-                        <input type="radio" value="Messi" name="fråga3" id="p3">
+                        <input type="radio" value="Messi" name="fråga" id="p3">
                         <label for="p3">Messi</label>
                     </fieldset>
                     <br>
                     <fieldset>
                         <legend>Hur många spelare är man i varje lag?</legend>
-                        <input type="radio" value="7st" name="fråga4" id="s1">
+                        <input type="radio" value="7st" name="fråga2" id="s1">
                         <label for="s1">7st</label>
                         <br>
-                        <input type="radio" value="11st" name="fråga5" id="s2">
+                        <input type="radio" value="11st" name="fråga2" id="s2">
                         <label for="s2">11st</label>
                         <br>
-                        <input type="radio" value="9st" name="fråga6" id="s3">
+                        <input type="radio" value="9st" name="fråga2" id="s3">
                         <label for="s3">9st</label>
                     </fieldset>
                     <br>
@@ -80,14 +80,14 @@
                     </fieldset>
                     <br>
                     <fieldset>
-                        <legend>Vilket lag leder premier league taballen</legend>
+                        <legend>Vilket lag leder premier league tabellen</legend>
                         <input type="text" id="prem" name="premleague">
                     </fieldset>
                     <br>
                     <button type="submit">Svara</button>
                 </form>
             </main>
-            <footer>
+            <footer role="contentinfo">
                 <p>Theo Brodén TE22A</p>
             </footer>
         </div>
