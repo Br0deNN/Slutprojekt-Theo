@@ -38,10 +38,9 @@
                     
                 </nav>
 
-                
+                <h1>Quiz om fotboll</h1>
             </header>
             <main role="main">
-                <h2>Quiz om fotboll</h2>
                 <form role="form" action="svar.html" method="post">
                     <fieldset>
                         <legend>Vem är världens bästa fotbollsspelare?</legend>
@@ -57,26 +56,23 @@
                     <br>
                     <fieldset>
                         <legend>Hur många spelare är man i varje lag?</legend>
-                        <input type="radio" value="7st" name="fråga2" id="s1">
+                        <input type="checkbox" value="7st" name="fråga2" id="s1">
                         <label for="s1">7st</label>
                         <br>
-                        <input type="radio" value="11st" name="fråga2" id="s2">
+                        <input type="checkbox" value="11st" name="fråga3" id="s2">
                         <label for="s2">11st</label>
                         <br>
-                        <input type="radio" value="9st" name="fråga2" id="s3">
+                        <input type="checkbox" value="9st" name="fråga4" id="s3">
                         <label for="s3">9st</label>
                     </fieldset>
                     <br>
                     <fieldset>
                         <legend>Vilken spelare har gjort flest mål?</legend>
-                        <input type="checkbox" value="Ronaldo" name="fråga7" id="cr7">
-                        <label for="cr7">Ronaldo</label>
-                        <br>
-                        <input type="checkbox" value="Neymar" name="fråga8" id="ney">
-                        <label for="ney">Neymar</label>
-                        <br>
-                        <input type="checkbox" value="Messi" name="fråga9" id="mes">
-                        <label for="mes">Messi</label>
+                            <select name="spelare" id="spelare">
+                                <option value="Ronaldo">Ronaldo</option>
+                                <option value="Messi">Messi</option>
+                                <option value="Neymar">Neymar</option>
+                            </select>
                     </fieldset>
                     <br>
                     <fieldset>

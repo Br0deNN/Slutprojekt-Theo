@@ -47,9 +47,7 @@ nav li a {
     padding: 10px; /* Add padding to increase clickable area */
 }
 
-.active {
-    color: lawngreen;
-}
+
 
 /* Startsidan */
 
@@ -91,13 +89,10 @@ nav li a {
     text-align: center;
 }
 
-img {
+img, video {
     border-radius: 30px;
 }
 
-video {
-    border-radius: 30px;
-}
 
 footer {
     grid-area: footer;
@@ -147,7 +142,6 @@ footer p {
 #stjärnor main {
     display: flex; 
     flex-direction: column;
-    overflow-y: scroll;
 }
 
 #stjärnor section:first-child {
@@ -173,10 +167,6 @@ nav:nth-child(2) {
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.12),
     0 6.7px 5.3px rgba(0, 0, 0, 0.09);
-    
-}
-
-nav:nth-child(2){
     grid-area: nav2;
 }
 
@@ -193,11 +183,9 @@ nav:nth-child(2) ul li {
     border: 2px solid whitesmoke;
     border-radius: 25px;
     background-image: linear-gradient(#36d6de, #2fd5dd, #28d3dc, #22d0da, #21cad3, #20c3cc, #1fbcc5, #1eb5be, #1dafb6, #1ca8af, #1aa1a8);
-    width: 10em;
+    width: 9em;
     text-decoration: none;
     color: white;
-    font-size: 1.1em;
-    font-weight: bold;
 }
 
 nav:nth-child(2) ul li:hover {
@@ -267,12 +255,6 @@ nav:nth-child(2) ul li:hover {
 }
 
 /* Zlatan */
-
-h1 {
-    grid-area: h1;
-    color: White;
-    text-align: center;
-}
 
 #zlatan .wrapper {
     width: 100%; /* Ställer in bredden på elementet till 100% */
@@ -387,7 +369,6 @@ h1 {
 #fans main {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
 }
 
 
@@ -472,27 +453,17 @@ h1 {
     box-sizing: border-box;
 }
 
-#passwordError, #emailError {
+#passwordError{
     color: red;
 }
 
-.required.valid-password {
-    border: 2px solid rgb(10, 236, 10); /* Grön färg för giltigt lösenord */
-}
-
-.required.invalid-password {
+input:required:invalid {
     border: 2px solid red; /* Röd färg för ogiltigt lösenord */
 }
 
-.required.valid-email {
+input:required:valid {
     border: 2px solid rgb(10, 236, 10); /* Grön färg för giltigt lösenord */
 }
-
-.required.invalid-email{
-    border: 2px solid red; /* Röd färg för ogiltigt lösenord */
-}
-
-
 
 #login main form button {
     background-color: #4CAF50;
@@ -550,7 +521,9 @@ h1 {
     justify-content: center;
 }
 
-
+#svar section {
+    text-align: center;
+}
 
 #svar main section:nth-child(2) {
     text-align-last: center;
@@ -577,7 +550,10 @@ h1 {
 #svar dd:last-of-type {
     color: hsl(145, 100%, 15%);
     font-weight: 800;
-   
+}
+
+#svar dd a{
+    color: blueviolet;
 }
 
 /* Quiz */
@@ -600,7 +576,7 @@ h1 {
     flex-direction: column;
 }
 
-#quiz h2 {
+h1 {
     text-align: center;
 }
 
@@ -645,22 +621,26 @@ a:link {
     color: white;
 }
 
-a:visited .active {
-    color: inherit;
+a:visited {
+    color: white;
 }
 a:focus{
-    color: lawngreen;
+    color: inherit;
 }
 
 a:hover{
-    color: lawngreen;
+    color: inherit;
 }
 
 a:active{
     color: lawngreen;
 }
 
-/* Media queris */
+a.active {
+    color: lawngreen;
+}
+
+/* Media querys */
 
 @media screen and (max-width: 300px) {
     .cancelbtn {
@@ -971,13 +951,11 @@ a:active{
         grid-template-rows: 1fr 1fr;
         
     }
-    
-    #login main img {
+
+    #login main iframe {
         grid-column-start: 2;
-        width: 50%;
         margin: 0 auto;
         margin-top: auto;
-        padding-top: 10px;
     }
 
     #login main form {
@@ -996,6 +974,10 @@ a:active{
     
     #svar dd {
         font-size: larger;
+    }
+
+    h1 {
+        padding-top: 6ex;
     }
 
 }
