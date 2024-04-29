@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="sv">
-    <head>
+<!DOCTYPE html> <!--Anger språket html för webbplatsen-->
+<html lang="sv"> <!--Sätter språket till svesnka för webbplatsen-->
+    <head> <!--Innehåller sidans metadata-->
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8"> <!--Gör om dataspråk till människospråk-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Gör så att alla enheter kan använda sidan-->
+        <link rel="stylesheet" href="style.css"> <!--Importerar koden från css till webbsidan så att man desgina sidan med färger osv-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--Koden länkar till en CSS-fil som innehåller ikoner från Boxicons-biblioteket, vilket gör det möjligt att använda dessa ikoner på en webbsida.-->
 
-        <title>Fotboll</title>
+        <title>Fotboll</title>  <!--Ger namnet på sidan, syns på fliken-->
 
     </head>
-    <body id="index">
-        <div class="wrapper">
-            <header role="banner">
-                <nav role="navigation">
-                    
-                    <ul>
-                        <li>
-                            <a class="active" href="index.html"><i class='bx bx-home-alt-2 bx-md bx-burst-hover bx-border'></i></a>
+    <body id="index"> <!--Bodyn på sidan är det vi ser i skillnad från head som inte syns. Body har en id så att just denna sidans innehåll kan väljas med en id-selektor i CSS-->
+        <div class="wrapper"> <!--Wrappern omfamnar allt på sidan, dvs webbsidans innehåll och allt som vi kan se på sidan-->
+            <header role="banner"> <!--Header elemtet definnerar sidans huvudsektion-->
+                <nav role="navigation"> <!--Den globala navigations menyn som innehåller länkar till: startsidan, stjärnor osv.-->
+                     
+                    <ul> <!--Oordnad lista som används för navigationsmeny-->
+                        <li> <!--Används för att skapa ett listobjekt i den oordnade listan-->
+                            <a class="active" href="index.html"><i class='bx bx-home-alt-2 bx-md bx-burst-hover bx-border'></i></a> <!--Används för att skapa en länk till en annan webbadress och använder en ikon för startsidan från Boxicons-biblioteket-->
+                            <!-- Klassen active används för att visa vilken sida som är aktiv dvs den sida du är inne på. Det finns css för denna klass som stylear sidans länk i nav-->
                         </li>
                         <li>
                             <a href="stjärnor.html">Stjärnor</a>
@@ -34,30 +34,32 @@
                         </li>
                         <li>
                             <a href="login.html">Login</a>
-                        </li>
-                    </ul>
+                        </li> <!-- Sluttag för listobjekt-->
+                    </ul> <!-- Sluttag för ordnad lista-->
                     
                     
                     
-                </nav>
-            </header>
-            <main role="main">
-                <section>
-                        <h2>Fotboll</h2>
+                </nav> <!-- Sluttag för navigationsmenyn-->
+            </header> <!-- Sluttag för header-->
 
-                        <p>
+            <main role="main"> <!--Här i ligger sidans huvudinnehål-->
+                <section> <!--Section används för att skapa sektioner av innehållet i main-->
+                        <h2>Fotboll</h2> <!-- Andra typen av huvudrubrik-->
+
+                        <p> <!--XHTML taggen p står för stycke, där man skriver text som ska visas på sidan -->
                             Här finns magin i fotbollens värld - från legendariska spelare till spektakulära mål. 
                             Dyk in och utforska sidan för att fördjupa dig i fotbollens fantastiska atmosfär.
-                        </p>      
-                </section>
+                        </p> <!-- Sluttag textstycke-->
+
+                </section> <!-- Sluttag för section-->
                 
-                    <img src="img/jude-bellingham.png" alt="Bild på Jude bellingham">
+                    <img src="img/jude-bellingham.png" alt="Bild på Jude bellingham"> <!--Infogar en bild från mappen img-->
                 
-            </main>
-            <footer role="contentinfo">
+            </main><!-- Sluttag för main-->
+            <footer role="contentinfo"> <!--Footer elemtet är webbsidans eller webbplatsen sidfot och ska alltid finnas längst ner på sidan-->
                 <p>Theo Brodén TE22A</p>
-            </footer>
+            </footer> <!-- Sluttag för footer-->
             
-        </div>
-    </body>
-</html>
+        </div> <!-- Sluttag wrappern-->
+    </body> <!-- Sluttag för bodyn-->
+</html> <!-- Sluttag för doctypen-->

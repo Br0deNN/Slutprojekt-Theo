@@ -40,25 +40,25 @@
             </header>
            <main role="main">
                 
-                    <iframe src="https://www.youtube.com/watch?v=R6HdHMdL22A"></iframe>
+                    <iframe src="https://www.youtube.com/watch?v=R6HdHMdL22A"></iframe> <!-- En iframe för att bädda in en YouTube-video -->
                 
-                    <form role="form" action="svar.html" method="post">
-                        <label for="uname"><b>Användarnamn</b></label>
-                        <input type="text" placeholder="Ange Användarnamn" name="uname" id="uname" required>
+                    <form role="form" action="svar.html" method="post"> <!-- Ett formulär för inloggning -->
+                        <label for="uname"><b>Användarnamn</b></label>  <!-- Etikett för användarnamn -->
+                        <input type="text" placeholder="Ange Användarnamn" name="uname" id="uname" required> <!-- Input-fält för användarnamn med id="uname", krävs att fylla i -->
 
-                        <label for="email"><b>E-post</b></label>
-                        <input type="email" placeholder="test.test@tesing.ta" name="email" id="email" required>
+                        <label for="email"><b>E-post</b></label>   <!-- Etikett för e-post -->
+                        <input type="email" placeholder="test.test@tesing.ta" name="email" id="email" required>  <!-- Input-fält för e-post med id="email", krävs att fylla i -->
                     
-                        <label for="psw"><b>Lösenord</b></label>
-                        <input type="password" placeholder="Ange Lösenord" name="psw" id="psw" required>
+                        <label for="psw"><b>Lösenord</b></label>   <!-- Etikett för lösenord -->
+                        <input type="password" placeholder="Ange Lösenord" name="psw" id="psw" required>   <!-- Input-fält för lösenord med id="psw", krävs att fylla i -->
 
-                        <div id="passwordError"></div>
+                        <div id="passwordError"></div>   <!-- Div-element för att visa felmeddelanden för lösenordet -->
                 
-                        <button type="submit" id="loginButton">Logga in</button>
+                        <button type="submit" id="loginButton">Logga in</button>  <!-- Knapp för att skicka inloggningsuppgifter -->
                 
-                        <a href="index.html" class="cancelbtn">Avbryt</a>
+                        <a href="index.html" class="cancelbtn">Avbryt</a>  <!-- Länk för att avbryta inloggningen och återgå till startsidan -->
                         <label>
-                            <input type="checkbox" checked="checked" name="sub"> Prenumerera
+                            <input type="checkbox" checked="checked" name="sub"> Prenumerera  <!-- Etikett och kryssruta för att prenumerera på nyhetsbrev -->
                         </label>
                     </form>
             </main>
@@ -67,6 +67,6 @@
             </footer>
             
         </div>
-        <script src="script.js"></script>
+        <script src="script.js"></script> <!-- Länk till en extern JavaScript-fil -->
     </body>
 </html>

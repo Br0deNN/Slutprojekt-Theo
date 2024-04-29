@@ -38,12 +38,14 @@
                     
                 </nav>
 
-                <h1>Quiz om fotboll</h1>
+                <h1>Quiz om fotboll</h1> <!--Sidans huvudrubrik-->
             </header>
             <main role="main">
                 <form role="form" action="svar.html" method="post">
-                    <fieldset>
-                        <legend>Vem är världens bästa fotbollsspelare?</legend>
+                    <fieldset>  <!-- Anger ett område för första frågan -->
+                        <legend>Vem är världens bästa fotbollsspelare?</legend>  <!-- Titel för första frågan -->
+            
+                         <!-- Radioknappar för att välja mellan olika alternativ -->
                         <input type="radio" value="Messi" name="fråga" id="p1">
                         <label for="p1">Messi</label>
                         <br>
@@ -53,9 +55,11 @@
                         <input type="radio" value="Messi" name="fråga" id="p3">
                         <label for="p3">Messi</label>
                     </fieldset>
-                    <br>
+                    <br> <!-- Radbrytning -->
                     <fieldset>
                         <legend>Hur många spelare är man i varje lag?</legend>
+
+                         <!-- Kryssrutor för att välja flera alternativ -->
                         <input type="checkbox" value="7st" name="fråga2" id="s1">
                         <label for="s1">7st</label>
                         <br>
@@ -68,6 +72,8 @@
                     <br>
                     <fieldset>
                         <legend>Vilken spelare har gjort flest mål?</legend>
+
+                        <!-- Dropdown-meny för att välja ett alternativ -->
                             <select name="spelare" id="spelare">
                                 <option value="Ronaldo">Ronaldo</option>
                                 <option value="Messi">Messi</option>
@@ -77,9 +83,13 @@
                     <br>
                     <fieldset>
                         <legend>Vilket lag leder premier league tabellen</legend>
+
+                          <!-- Textfält för att skriva in svar -->
                         <input type="text" id="prem" name="premleague">
                     </fieldset>
                     <br>
+                    
+                     <!-- Knapp för att skicka in svar -->
                     <button type="submit">Svara</button>
                 </form>
             </main>
