@@ -4,7 +4,6 @@
     src: url(Montserrat-Medium.ttf); /* Anger källan till typsnittsfilen */
 }
 
-
 body {
     margin: 0; /* Återställer marginaler till 0 för att undvika standardmarginaler */
     width: 100%; /* Anger full bredd för att fylla hela fönstret */
@@ -25,7 +24,6 @@ header nav {
     box-shadow: /* Lägger till en skugga runt navigationsmenyn */
     0 2.8px 2.2px rgba(0, 0, 0, 0.5), /* Skugga med rgba-färg */
     0 6.7px 5.3px rgba(0, 0, 0, 0.1);
-    
 }
 
 /* Stilmall för den första listan i navigationsmenyn */
@@ -107,7 +105,6 @@ footer {
     background-color: black;
     width: 100%;
     text-align: center;
-    
 }
 
 /* Stilmall för texten i fotnoten */
@@ -117,7 +114,7 @@ footer p {
 }
 
 /* Stilmall för bilder i huvudinnehållet */
-#index main img {
+#index main img, #rekord main img {
     width: 50%;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -125,18 +122,13 @@ footer p {
     0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
-
-
-
-
 
 /* Stjärnor */
 
-/* Stilmall för wrapper i stjärnsektionen */
-#stjärnor .wrapper, #global .wrapper, #zlatan .wrapper {
+/* Stilmall för wrapper */
+.wrapper {
     width: 100%; 
     height: 100%; 
     margin: 0 auto; 
@@ -146,14 +138,13 @@ footer p {
         "header"
         "nav2"
         "main"
-        "footer"
-    ;
+        "footer";
 }
 
-/* Stilmall för huvudinnehållet i stjärnsektionen */
-#stjärnor main {
-    display: flex; 
-    flex-direction: column;
+/* Stilmall för huvudinnehåll */
+main {
+    display: flex; /* Använd flexbox för att arrangera innehållet vertikalt */
+    flex-direction: column; /* Staplar innehållet i en kolumn */
 }
 
 /* Stilmall för första sektionen i stjärnsektionen */
@@ -164,7 +155,6 @@ footer p {
 /* Stilmall för rubriken 2 i stjärnsektionen */
 #stjärnor h2 {
     font-size: large; /* Textstorlek */
-    text-align: left; /* Vänsterjusterad text */
 }
 
 /* Stilmall för ordnad lista i stjärnsektionen */
@@ -174,7 +164,7 @@ footer p {
 
 /* Stilmall för video i stjärnsektionen */
 #stjärnor video {
-    width: 90%; width: 90%; /* Videobredd */
+    width: 90%; /* Videobredd */
 }
 
 /* Stilmall för andra navigationsmenyn i stjärnsektionen */
@@ -214,7 +204,6 @@ nav:nth-child(2) ul li:hover {
 
 /* Värdsstjärnor*/
 
-
 #global main {
     display: grid;
     grid-template-columns: 1fr; /* Skapa en kolumn i grid-layouten som tar upp hela tillgängliga bredden */
@@ -236,8 +225,6 @@ nav:nth-child(2) ul li:hover {
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-   
-
 }
 
 #global main section:last-of-type video {
@@ -250,12 +237,6 @@ nav:nth-child(2) ul li:hover {
     background-image: linear-gradient(to right, blue, yellow);
 }
 
-
-#zlatan main {
-    display: flex; /* Använd flexbox för att arrangera innehållet vertikalt */
-    flex-direction: column; /* Staplar innehållet i en kolumn */
-}
-
 #zlatan main section:nth-child(1) {
     text-align-last: center;
     margin-top: 1em;
@@ -265,7 +246,6 @@ nav:nth-child(2) ul li:hover {
     width: 90%;
 }
 
-
 #zlatan main section:nth-child(2) {
     margin-top: 1em;
 }
@@ -274,7 +254,7 @@ nav:nth-child(2) ul li:hover {
     width: 100%;
 }
 
-#rekord .wrapper {
+#rekord .wrapper, #fans .wrapper, #login .wrapper, #quiz .wrapper {
     width: 100%; /* Ställer in bredden på elementet till 100% */
     height: 100%; 
     margin: 0 auto; 
@@ -283,8 +263,7 @@ nav:nth-child(2) ul li:hover {
     grid-template-areas: 
         "header"
         "main"
-        "footer"
-    ;
+        "footer";
 }
 
 #rekord main {
@@ -297,7 +276,6 @@ nav:nth-child(2) ul li:hover {
 #rekord main section {
     text-align: center;
     border-radius: 50px;
-    
 }
 
 #rekord main section:nth-child(1) {
@@ -312,50 +290,15 @@ nav:nth-child(2) ul li:hover {
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
 
-#rekord img {
-    width: 80px;
-    box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
-}
-
-
-
 #rekord main section article p {
     font-size: 1em;
     overflow-wrap: break-word;
 }
 
-#fans .wrapper {
-    width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: 100%; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-rows: auto auto 50px; 
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer"
-    ;
-}
-
-#fans main {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
 #fans main section{
    padding-top: 10px; /* Lägg till ett mellanrum ovanför varje <section> element */
    padding-bottom: 20px; /* Lägg till ett mellanrum under varje <section> element */
 }
-
 
 #fans main section caption {
     font-size: 1.4em; /* Ange textstorleken för captions */
@@ -368,8 +311,6 @@ nav:nth-child(2) ul li:hover {
     padding: 10px;
 }
 
-
-
 #fans main section tr td {
     width: 200px; /* Ställer in bredden på tabellcellerna */
 }
@@ -380,7 +321,6 @@ nav:nth-child(2) ul li:hover {
 
 #fans main section:first-child tr:nth-child(even){
     background-color: #C0C0C0; /* Ställ in bakgrundsfärgen för jämnt numrerade rader i den första sektionen av tabellen */
-   
 }
 
 #fans main section:nth-child(2) th {
@@ -389,7 +329,6 @@ nav:nth-child(2) ul li:hover {
 
 #fans main section:nth-child(2) tr:nth-child(odd){
     background-color: #808080; /* Ställ in bakgrundsfärgen för udda numrerade rader i den andra sektionen av tabellen */
-   
 }
 
 #fans main section:last-of-type th {
@@ -398,26 +337,6 @@ nav:nth-child(2) ul li:hover {
 
 #fans main section:last-of-type tr:nth-child(odd){
     background-color: #808080;
-   
-}
-
-#login .wrapper {
-    width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: 100%; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-rows: auto auto 50px; 
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer"
-    ;
-}
-
-#login main {
-    display: flex;
-    flex-direction: column;
-    
 }
 
 #login main form {
@@ -458,7 +377,7 @@ input:required:valid {
 }
 
 #login label:last-child {
-    float: right; /* Flytta etiketten till höger */
+    float: right; /* Jag använder float right för att flytta både text och checkbox till höger inom dess maximala område som är storleken för form */
 }
 
 #login main form a{
@@ -466,25 +385,11 @@ input:required:valid {
     color: #fff;
 }
 
-
 #login main img {
     width: 50%;
     margin: 0 auto;
     margin-top: auto; /* Skickar ner bilden så långt den kan i sectionen*/
     padding-top: 10px;
-}
-
-#svar .wrapper {
-    width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: 100%; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-rows: auto auto 50px; 
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer"
-    ;
 }
 
 #svar main {
@@ -528,24 +433,6 @@ input:required:valid {
 }
 
 /* Quiz */
-
-#quiz .wrapper {
-    width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: 100%; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-rows: auto auto 50px; 
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer"
-    ;
-}
-
-#quiz main{
-    display: flex;
-    flex-direction: column;
-}
 
 #quiz h2 {
     text-align: center;
