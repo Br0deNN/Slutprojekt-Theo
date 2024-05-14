@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Fotboll</title>
+        <title>Quiz</title>
 
     </head>
     <body id="quiz">
@@ -38,9 +38,10 @@
                     
                 </nav>
 
-                <h1>Quiz om fotboll</h1> <!--Sidans huvudrubrik-->
+                <h1></h1> <!--Sidans huvudrubrik-->
             </header>
             <main role="main">
+                <h2>Quiz om fotboll</h2>
                 <form role="form" action="svar.html" method="post">
                     <fieldset>  <!-- Anger ett område för första frågan -->
                         <legend>Vem är världens bästa fotbollsspelare?</legend>  <!-- Titel för första frågan -->
@@ -63,10 +64,10 @@
                         <input type="checkbox" value="7st" name="fråga2" id="s1">
                         <label for="s1">7st</label>
                         <br>
-                        <input type="checkbox" value="11st" name="fråga3" id="s2">
+                        <input type="checkbox" value="11st" name="fråga2" id="s2">
                         <label for="s2">11st</label>
                         <br>
-                        <input type="checkbox" value="9st" name="fråga4" id="s3">
+                        <input type="checkbox" value="9st" name="fråga2" id="s3">
                         <label for="s3">9st</label>
                     </fieldset>
                     <br>
@@ -86,8 +87,13 @@
 
                           <!-- Textfält för att skriva in svar -->
                         <input type="text" id="prem" name="premleague">
+                        
                     </fieldset>
                     <br>
+                    <fieldset>
+                        <legend>Vad tyckte du om quizen?</legend>
+                        <textarea name="text" id="premier"></textarea> <!--Ett textfält för input, som användaren kan förstora -->
+                    </fieldset>
                     
                      <!-- Knapp för att skicka in svar -->
                     <button type="submit">Svara</button>

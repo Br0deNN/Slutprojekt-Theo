@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Fotboll</title>
+        <title>Login</title>
 
     </head>
     <body id="login">
@@ -37,6 +37,7 @@
                     </ul>
                     
                 </nav>
+                <h1></h1>
             </header>
            <main role="main">
                 
@@ -51,14 +52,13 @@
                     
                         <label for="psw"><b>Lösenord</b></label>   <!-- Etikett för lösenord -->
                         <input type="password" placeholder="Ange Lösenord" name="psw" id="psw" required>   <!-- Input-fält för lösenord med id="psw", krävs att fylla i -->
-
-                        <div id="passwordError"></div>   <!-- Div-element för att visa felmeddelanden för lösenordet -->
+                        <section id="passwordError"></section>
+                       
                 
                         <button type="submit" id="loginButton">Logga in</button>  <!-- Knapp för att skicka inloggningsuppgifter -->
-                
-                        <a href="index.html" class="cancelbtn">Avbryt</a>  <!-- Länk för att avbryta inloggningen och återgå till startsidan -->
+            
                         <label>
-                            <input type="checkbox" checked="checked" name="sub"> Prenumerera  <!-- Etikett och kryssruta för att prenumerera på nyhetsbrev -->
+                            <input type="checkbox" value="checkbox" checked="checked" name="checkbox"> Prenumerera  <!-- Etikett och kryssruta för att prenumerera på nyhetsbrev -->
                         </label>
                     </form>
             </main>

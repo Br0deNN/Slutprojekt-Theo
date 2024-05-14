@@ -51,7 +51,9 @@ nav li a {
     padding: 10px; /* Lägger till padding för att öka klickområdet */
 }
 
-
+h1 {
+    display: none;
+}
 
 /* Startsidan */
 
@@ -134,7 +136,7 @@ footer p {
 /* Stjärnor */
 
 /* Stilmall för wrapper i stjärnsektionen */
-#stjärnor .wrapper {
+#stjärnor .wrapper, #global .wrapper, #zlatan .wrapper {
     width: 100%; 
     height: 100%; 
     margin: 0 auto; 
@@ -212,21 +214,6 @@ nav:nth-child(2) ul li:hover {
 
 /* Värdsstjärnor*/
 
-#global .wrapper {
-    width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: 100%; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-rows: auto 60px auto 50px; 
-    grid-template-areas: 
-        "header"
-        "nav2"
-        "main"
-        "footer"
-    ;
-}
-
-
 
 #global main {
     display: grid;
@@ -238,7 +225,7 @@ nav:nth-child(2) ul li:hover {
     margin-bottom: 21px; /* Lägg till ett mellanrum nedtill på 21 pixlar för varje <section> element */
 }
 
-#global main section img {
+#global main section img, video {
     width: 50%; 
     max-width: 100%; /* Se till att bilder inte överskrider 100% av föräldrekontainerns bredd */
     height: auto; /* Låt höjden justeras automatiskt för att behålla bildens proportioner */
@@ -253,20 +240,6 @@ nav:nth-child(2) ul li:hover {
 
 }
 
-
-#global main section video {
-    width: 50%; 
-    max-width: 100%; 
-    padding-top: 1em; /* Lägg till padding överst på videor för att skapa ett mellanrum */
-    box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
-}
-
 #global main section:last-of-type video {
     margin-bottom: 21px; /* Lägg till ett mellanrum nedtill på 21 pixlar för den sista videon */
 }
@@ -274,17 +247,6 @@ nav:nth-child(2) ul li:hover {
 /* Zlatan */
 
 #zlatan .wrapper {
-    width: 100%; /* Ställer in bredden på elementet till 100% */
-    height: auto; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-rows: auto 60px auto 50px; 
-    grid-template-areas: 
-        "header"
-        "nav2"
-        "main"
-        "footer"
-    ;
     background-image: linear-gradient(to right, blue, yellow);
 }
 
@@ -292,7 +254,6 @@ nav:nth-child(2) ul li:hover {
 #zlatan main {
     display: flex; /* Använd flexbox för att arrangera innehållet vertikalt */
     flex-direction: column; /* Staplar innehållet i en kolumn */
-    overflow-y: scroll; /* Lägg till vertikal scrollning om det behövs */
 }
 
 #zlatan main section:nth-child(1) {
@@ -496,13 +457,6 @@ input:required:valid {
     opacity: 0.8; /* Ändra opacitet när musen hovrar över knappen */
 }
 
-#login main form .cancelbtn {
-    width: auto; /* Anpassa bredden automatiskt */
-    padding: 9px 18px;
-    background-color: red;
-    font-size: 0.8em;
-}
-
 #login label:last-child {
     float: right; /* Flytta etiketten till höger */
 }
@@ -593,7 +547,7 @@ input:required:valid {
     flex-direction: column;
 }
 
-h1 {
+#quiz h2 {
     text-align: center;
 }
 
@@ -1000,10 +954,6 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
     
     #svar dd {
         font-size: larger;
-    }
-
-    h1 {
-        padding-top: 6ex;
     }
 
 }
