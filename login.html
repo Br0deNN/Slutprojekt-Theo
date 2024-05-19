@@ -52,13 +52,15 @@
                     
                         <label for="psw"><b>Lösenord</b></label>   <!-- Etikett för lösenord -->
                         <input type="password" placeholder="Ange Lösenord" name="psw" id="psw" required>   <!-- Input-fält för lösenord med id="psw", krävs att fylla i -->
-                        <section id="passwordError"></section>
+                        <section id="passwordError">
+                            <!-- Används för Javascript -->
+                        </section>
                        
                 
                         <button type="submit" id="loginButton">Logga in</button>  <!-- Knapp för att skicka inloggningsuppgifter -->
             
                         <label>
-                            <input type="checkbox" value="checkbox" checked="checked" name="checkbox"> Prenumerera  <!-- Etikett och kryssruta för att prenumerera på nyhetsbrev -->
+                            <input type="checkbox" value="chkbox" checked="checked" name="prenumerera"> Prenumerera  <!-- Etikett och kryssruta för att prenumerera på nyhetsbrev -->
                         </label>
                     </form>
             </main>

@@ -79,7 +79,7 @@ h1 {
 }
 
 /* Stilmall för andra rubriken*/
-#index h2 {
+h2 {
     font-size: 2em;
     color: black;
     text-align: center;
@@ -127,7 +127,7 @@ footer p {
 
 /* Stjärnor */
 
-/* Stilmall för wrapper */
+/* Stilmall för wrapper, designad för sidorna med en lokalmeny */
 .wrapper {
     width: 100%; 
     height: 100%; 
@@ -377,7 +377,7 @@ input:required:valid {
 }
 
 #login label:last-child {
-    float: right; /* Jag använder float right för att flytta både text och checkbox till höger inom dess maximala område som är storleken för form */
+    float: right; /* Jag använder float right för att flytta både text och checkbox till höger inom dess maximala område, som är storleken för form */
 }
 
 #login main form a{
@@ -596,9 +596,7 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
         transition: 0.5s ease;
     }
     
-    
-
-    #index .wrapper {
+    .wrapper {
         width: 100%; /* Ställer in bredden på elementet till 100% */
         height: 100%; /* Ställer in höjden på elementet till 98% av vyhöjden (viewport height) */
         margin: 0 auto; /* Centrerar elementet horisontellt genom att sätta margin till 0 och auto */
@@ -610,7 +608,6 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
             "footer"
         ;
     }
-
 
     #index main {
         display: flex;
@@ -644,7 +641,6 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
         width: 70%;
     }
     
-    
     #index img:nth-child(2) {
         align-self: center;
     }
@@ -654,7 +650,7 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
         margin-right: 0; /* Ingen marginal till höger för section-element i main inom #global */
     }
 
-    #stjärnor .wrapper {
+    #stjärnor .wrapper, #zlatan .wrapper, #global .wrapper {
         width: 100%; /* Ställer in bredden på elementet till 100% */
         height: 100%; 
         margin: 0 auto; 
@@ -689,40 +685,11 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
     #stjärnor video {
         width: 90%;
     }
-
-    #zlatan .wrapper {
-        width: 100%; /* Ställer in bredden på elementet till 100% */
-        height: 100%; 
-        margin: 0 auto; 
-        display: grid; 
-        grid-template-rows: 80px 60px auto 50px; 
-        grid-template-areas: 
-            "header"
-            "nav2"
-            "main"
-            "footer"
-        ;
-        background-image: linear-gradient(to right, blue, yellow);
-    }
-    
-    
+        
     #zlatan main {
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-
-    #rekord .wrapper {
-        width: 100%; /* Ställer in bredden på elementet till 100% */
-        height: 100%; 
-        margin: 0 auto; 
-        display: grid; 
-        grid-template-rows: 80px auto 50px; 
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer"
-        ;
     }
     
     #rekord main {
@@ -764,25 +731,9 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
     #rekord img {
         width: 30%; /* Ställer in bredden på bilder till 30% av förälderelementet */
     }
-   
-    
-    
+
     #rekord main section article p {
         font-size: 1.6em;
-    }
-
-    
-    #fans .wrapper {
-        width: 100%; /* Ställer in bredden på elementet till 100% */
-        height: 100%; 
-        margin: 0 auto; 
-        display: grid; 
-        grid-template-rows: 80px auto 50px; 
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer"
-        ;
     }
 
     #fans main {
@@ -793,24 +744,10 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
         padding: 5ch;
     }
 
-
     #fans main section caption {
         font-size: 2em;
         font-weight: 700;
     } 
-
-    #login .wrapper {
-        width: 100%; /* Ställer in bredden på elementet till 100% */
-        height: 100%; 
-        margin: 0 auto; 
-        display: grid; 
-        grid-template-rows: 80px auto 50px; 
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer"
-        ;
-    }
     
     #login main {
         display: grid;
@@ -842,5 +779,5 @@ a.active { /* Tillämpar stil på länkar med klassen "active" */
     #svar dd {
         font-size: larger;
     }
-
+    
 }
